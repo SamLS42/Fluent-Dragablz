@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29424.173
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.11123.170 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dragablz", "Dragablz\Dragablz.csproj", "{C4D2C8A3-2B3A-46C6-83D3-6DCC83B34646}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragablzDemo", "DragablzDemo\DragablzDemo.csproj", "{2B28B8D0-67E7-461C-97C8-8A2ECA6C9314}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dragablz.Test", "Dragablz.Test\Dragablz.Test.csproj", "{F8636090-2153-401A-A00F-C5ADB66EF612}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentThemeDemo", "FluentThemeDemo\FluentThemeDemo.csproj", "{0CFC480F-56F8-43BD-89B8-45B0CD998C57}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,18 @@ Global
 		{F8636090-2153-401A-A00F-C5ADB66EF612}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{F8636090-2153-401A-A00F-C5ADB66EF612}.Release|x86.ActiveCfg = Release|Any CPU
 		{F8636090-2153-401A-A00F-C5ADB66EF612}.Release|x86.Build.0 = Release|Any CPU
+		{0CFC480F-56F8-43BD-89B8-45B0CD998C57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CFC480F-56F8-43BD-89B8-45B0CD998C57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CFC480F-56F8-43BD-89B8-45B0CD998C57}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{0CFC480F-56F8-43BD-89B8-45B0CD998C57}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{0CFC480F-56F8-43BD-89B8-45B0CD998C57}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0CFC480F-56F8-43BD-89B8-45B0CD998C57}.Debug|x86.Build.0 = Debug|Any CPU
+		{0CFC480F-56F8-43BD-89B8-45B0CD998C57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CFC480F-56F8-43BD-89B8-45B0CD998C57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CFC480F-56F8-43BD-89B8-45B0CD998C57}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{0CFC480F-56F8-43BD-89B8-45B0CD998C57}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{0CFC480F-56F8-43BD-89B8-45B0CD998C57}.Release|x86.ActiveCfg = Release|Any CPU
+		{0CFC480F-56F8-43BD-89B8-45B0CD998C57}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
