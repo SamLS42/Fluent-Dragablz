@@ -10,6 +10,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MahApps.Metro" Version="3.0.0-rc0529" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Dragablz\Dragablz.csproj" />
   </ItemGroup>
 
