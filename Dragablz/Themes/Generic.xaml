@@ -11,10 +11,6 @@
     xmlns:themes="clr-namespace:Dragablz.Themes"
     xmlns:ui="clr-namespace:System.Windows.Documents;assembly=PresentationUI">
 
-    <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/PresentationFramework.Fluent;component/Themes/Fluent.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
     <converters:EqualityToVisibilityConverter x:Key="EqualityToVisibilityConverter" />
     <converters:BooleanAndToVisibilityConverter x:Key="BooleanAndToVisibilityConverter" />
@@ -376,6 +372,10 @@
         TargetType="Button">
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Padding" Value="0,0,0,0" />
+        <Setter Property="Margin" Value="0,0,0,0" />
         <Setter Property="FontFamily" Value="{StaticResource SymbolThemeFontFamily}" />
         <Setter Property="FontSize" Value="{StaticResource TabViewItemHeaderCloseFontSize}" />
         <!--<Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
@@ -1219,7 +1219,6 @@
     <sys:Double x:Key="TabViewItemMinWidth">224</sys:Double>
     <sys:Double x:Key="TabViewItemHeaderIconSize">16</sys:Double>
     <Thickness x:Key="TabViewItemBorderThickness">1</Thickness>
-    <Thickness x:Key="TabViewItemHeaderIconMargin">0,0,10,0</Thickness>
 
     <Style x:Key="TrapezoidDragableTabItemStyle" TargetType="{x:Type local:DragablzItem}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
@@ -1242,8 +1241,7 @@
                             x:Name="Trapezoid"
                             Margin="0,0,0,0"
                             Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            PenThickness="2">
+                            BorderBrush="{TemplateBinding BorderBrush}">
                             <Grid MinWidth="{StaticResource TabViewItemMinWidth}">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
@@ -1283,7 +1281,15 @@
                                     CommandParameter="{Binding RelativeSource={RelativeSource TemplatedParent}}"
                                     Content="&#xE711;"
                                     IsTabStop="False"
-                                    Style="{DynamicResource TabViewCloseButtonStyle}" />
+                                    Style="{DynamicResource TabViewCloseButtonStyle}">
+                                    <Button.Visibility>
+                                        <MultiBinding Converter="{StaticResource ShowDefaultCloseButtonConverter}">
+                                            <Binding Path="ShowDefaultCloseButton" RelativeSource="{RelativeSource FindAncestor, AncestorType={x:Type local:TabablzControl}}" />
+                                            <Binding Path="FixedHeaderCount" RelativeSource="{RelativeSource FindAncestor, AncestorType={x:Type local:TabablzControl}}" />
+                                            <Binding Path="LogicalIndex" RelativeSource="{RelativeSource TemplatedParent}" />
+                                        </MultiBinding>
+                                    </Button.Visibility>
+                                </Button>
                             </Grid>
                         </local:Trapezoid>
                     </Grid>
