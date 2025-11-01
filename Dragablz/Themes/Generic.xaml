@@ -1215,9 +1215,19 @@
         </Style.Setters>
     </Style>
 
+    <sys:Double x:Key="TabViewItemMinHeight">32</sys:Double>
+    <sys:Double x:Key="TabViewItemMinWidth">224</sys:Double>
+    <sys:Double x:Key="TabViewItemHeaderIconSize">16</sys:Double>
+    <Thickness x:Key="TabViewItemBorderThickness">1</Thickness>
+    <Thickness x:Key="TabViewItemHeaderIconMargin">0,0,10,0</Thickness>
+
     <Style x:Key="TrapezoidDragableTabItemStyle" TargetType="{x:Type local:DragablzItem}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
-
+        <Setter Property="Background" Value="{StaticResource LayerOnMicaBaseAltFillColorTransparentBrush}" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="MinHeight" Value="{StaticResource TabViewItemMinHeight}" />
+        <Setter Property="BorderThickness" Value="{StaticResource TabViewItemBorderThickness}" />
+        <Setter Property="BorderBrush" Value="{StaticResource SubtleFillColorTransparentBrush}" />
         <Setter Property="Margin" Value="0,0,0,0" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
@@ -1234,7 +1244,7 @@
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             PenThickness="2">
-                            <Grid>
+                            <Grid MinWidth="{StaticResource TabViewItemMinWidth}">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="Auto" />
@@ -1247,7 +1257,19 @@
                                     Content="{TemplateBinding ContentControl.Content}"
                                     ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}"
                                     ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}"
-                                    SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                                    SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}">
+                                    <ContentPresenter.Resources>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="FontSize" Value="13" />
+                                            <Setter Property="FontWeight" Value="Normal" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding IsSelected, RelativeSource={RelativeSource AncestorType={x:Type local:DragablzItem}}}" Value="True">
+                                                    <Setter Property="FontWeight" Value="SemiBold" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </ContentPresenter.Resources>
+                                </ContentPresenter>
                                 <Thumb
                                     x:Name="PART_Thumb"
                                     Grid.Column="0"
